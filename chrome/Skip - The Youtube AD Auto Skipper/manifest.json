@@ -1,0 +1,33 @@
+{
+  "name": "Skip - The Youtube AD Auto Skipper",
+  "short_name": "Skip YTD Ads",
+  "version": "1.0",
+  "author": "CM",
+  "description": "The best ever youtube ad skipper and remover. Provides an experiance close to youtube vanced on smart devices.",
+  "browser_action": {
+    "default_icon": "skip.png",
+    "default_title": "Skip - YTD Ad Skipper"
+  },
+  "icons": {
+    "16": "skip.ico",
+    "24": "skip.ico",
+    "32": "skip.ico",
+    "48": "skip.ico",
+    "64": "skip.ico",
+    "96": "skip.ico",
+    "128": "skip.ico",
+    "192": "skip.ico",
+    "256": "skip.ico"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  "manifest_version": 2
+}
