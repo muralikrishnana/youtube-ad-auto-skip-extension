@@ -27,6 +27,11 @@ const handleAddNode = event => {
     if (playerAds) {
       playerAds.parentNode.removeChild(playerAds);
     }
+
+    let secondaryColumn = document.getElementById("secondary");
+    if (secondaryColumn) {
+      secondaryColumn.parentNode.removeChild(secondaryColumn);
+    }
   } catch (e) {}
 };
 
