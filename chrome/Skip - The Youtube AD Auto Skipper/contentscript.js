@@ -6,10 +6,9 @@ const mouseClick = new MouseEvent("click", {
 
 const handleAddNode = event => {
   try {
-    let adSkipButtons = document.getElementsByClassName("ytp-ad-skip-button");
     if (adSkipButtons) {
       for (let i = 0; i < adSkipButtons.length; i++)
-        adSkipButton[i].dispatchEvent(mouseClick);
+        adSkipButtons[i].dispatchEvent(mouseClick);
     }
 
     let adOverlayCloseButtons = document.getElementsByClassName(
