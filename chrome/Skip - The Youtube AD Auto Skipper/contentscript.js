@@ -6,17 +6,16 @@ const mouseClick = new MouseEvent("click", {
 
 const handleAddNode = event => {
   try {
-    if (adSkipButtons) {
-      for (let i = 0; i < adSkipButtons.length; i++)
-        adSkipButtons[i].dispatchEvent(mouseClick);
+    let adSkipButton = document.getElementsByClassName("ytp-ad-skip-button")[0];
+    if (adSkipButton) {
+      adSkipButton.dispatchEvent(mouseClick);
     }
 
-    let adOverlayCloseButtons = document.getElementsByClassName(
+    let adOverlayCloseButton = document.getElementsByClassName(
       "ytp-ad-overlay-close-button"
-    );
-    if (adOverlayCloseButtons && adOverlayCloseButtons.length > 0) {
-      for (let i = 0; i < adOverlayCloseButtons.length; i++)
-        adOverlayCloseButtons[i].dispatchEvent(mouseClick);
+    )[0];
+    if (adOverlayCloseButton) {
+      adOverlayCloseButton.dispatchEvent(mouseClick);
     }
 
     let mastHeadAd = document.getElementById("masthead-ad");
@@ -34,12 +33,11 @@ const handleAddNode = event => {
       secondaryColumn.parentNode.removeChild(secondaryColumn);
     }
 
-    let promotedVideos = document.getElementsByTagName(
+    let promotedVideo = document.getElementsByTagName(
       "ytd-promoted-video-renderer"
-    );
-    if (promotedVideos && promotedVideos.length > 0) {
-      for (let i = 0; i < promotedVideos.length; i++)
-        promotedVideos[i].parentNode.removeChild(promotedVideos[i]);
+    )[0];
+    if (promotedVideo) {
+      promotedVideo.parentNode.removeChild(promotedVideo);
     }
   } catch (e) {}
 };
